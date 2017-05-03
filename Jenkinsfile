@@ -4,17 +4,22 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                fastlane provision
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                fastlane scan
             }
         }
-        stage('Deploy') {
+        stage('Screenshots') {
             steps {
-                echo 'Deploying....'
+                fastlane screenshot
+            }
+        }stage('Deploy') {
+            steps {
+                fastlane build
+		fastlane upload
             }
         }
     }
