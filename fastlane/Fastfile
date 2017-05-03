@@ -37,7 +37,7 @@ platform :ios do
   desc "Upload to App Store and submit for review"
   lane :upload do
     deliver(
-      submit_for_review: true
+      submit_for_review: false
     )
   end
 
