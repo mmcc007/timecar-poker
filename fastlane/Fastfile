@@ -23,6 +23,11 @@ platform :ios do
     sigh(force: true)
   end
 
+  desc "Run tests"
+  lane :test do
+    scan
+  end
+
   desc "Take screenshots"
   lane :screenshot do
     snapshot
@@ -44,6 +49,7 @@ platform :ios do
   desc "Provision, take screenshots, build and upload to App Store"
   lane :do_everything do
     provision
+    scan
     screenshot
     build
     upload
