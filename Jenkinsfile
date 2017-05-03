@@ -16,7 +16,8 @@ pipeline {
             steps {
                 fastlane screenshot
             }
-        }stage('Deploy') {
+        }
+	stage('Deploy') {
             steps {
                 fastlane build
 		fastlane upload
